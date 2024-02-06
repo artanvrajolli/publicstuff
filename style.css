@@ -3,12 +3,20 @@
 /*
 value of max z-index 2**31 - 1 = 2147483647
 */
+
+
+.__menu-plus-container__,
+.__menu-plus-container__ *,
+.__menu-plus-container__ *::before,
+.__menu-plus-container__ *::after {
+    all: initial;
+}
+
 .__menu-plus-container__ *{
   transition: all var(--duration-time-kore) ease;
 }
 
 .__menu-plus-container__{
-  all: initial;
   --duration-time-kore: 0.15s;
   font-family: 'Poppins', sans-serif;
   position: fixed;
@@ -22,6 +30,7 @@ value of max z-index 2**31 - 1 = 2147483647
   user-select: none;
   box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
 }
+
 
 
 /* Custom scrollbar styles */
