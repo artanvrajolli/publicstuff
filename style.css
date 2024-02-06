@@ -197,7 +197,7 @@ value of max z-index 2**31 - 1 = 2147483647
   top: 10px;
   width: 50px;
   left: 60px;
-  border-radius: 0px 10px 10px 0px;
+  border-radius: 0px 65px 65px 0px;
   background: white;
   box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
 }
