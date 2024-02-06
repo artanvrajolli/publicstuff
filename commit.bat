@@ -6,7 +6,7 @@ call npm run build
 REM Replace {{script}} with 'https://example.com' in README.MD
 set "replacement=https://example.com"
 set "file=README.MD"
-call powershell -Command "(gc '%file%') -replace '{{script}}', '%replacement%' | Out-File -encoding ASCII '%file%'"
+call powershell -Command "(gc README-TEMPLATE.MD) -replace '{{script}}', '%replacement%' | Out-File -encoding ASCII '%file%'"
 
 REM Add all files to the git repository
 call git add .
