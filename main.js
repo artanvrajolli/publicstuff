@@ -58,6 +58,7 @@ class MenuKorePlus {
         // this.container.classList.add(this.cleanClass('menu-plus-core-hidden'))
         this.initAttributes();
         this.render = this.renderInit();
+        this.toggleSidebar('default-state');
         // this.render.classList.add(this.cleanClass('menu-plus-core-forced-collapsed'));
         document.dispatchEvent(new Event('MenuKorePlus:inited'));
     }
@@ -328,6 +329,9 @@ class MenuKorePlus {
                 this.container.classList.add(this.cleanClass('menu-plus-core-hidden'));
                 this.render.classList.add(this.cleanClass('menu-plus-core-forced-collapsed'));
                 document.body.style.setProperty('padding-left','0px','important');
+                break;
+            case 'default-state':
+                this.render.classList.add(this.cleanClass('menu-plus-core-collapsed'));
                 break;
             case 'toggle':
             default:
