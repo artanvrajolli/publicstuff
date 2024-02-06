@@ -55,8 +55,10 @@ class MenuKorePlus {
             this.body.insertAdjacentHTML('afterend', `<div class="__menu-plus-container__"></div>`);
         }
         this.container = document.querySelector('.__menu-plus-container__');
+        // this.container.classList.add(this.cleanClass('menu-plus-core-hidden'))
         this.initAttributes();
         this.render = this.renderInit();
+        // this.render.classList.add(this.cleanClass('menu-plus-core-forced-collapsed'));
         document.dispatchEvent(new Event('MenuKorePlus:inited'));
     }
 
@@ -91,7 +93,8 @@ class MenuKorePlus {
                 },
                 arrowClose:arrowCloseIcon,
                 onClickArrowClose: () => {
-                    this.toggleSidebar('force-collapsed');
+                    // this.toggleSidebar('force-collapsed');
+                    this.toggleSidebar('hidden');
                 }
             }),
             this.loggedIn ? this.componentTextMenu('ADMIN PANEL',{style:{textAlign:'center'}}) : this.componentMainMenu({ img: LoginIcon, text: 'Log in' , showArrow: false }),
@@ -111,6 +114,8 @@ class MenuKorePlus {
                 'menu-plus-cored-panel',
             ])
         });
+
+        //menu-plus-core-hidden
     }
     // end line render
 
@@ -303,6 +308,8 @@ class MenuKorePlus {
     // start line  manual toggle sidebar
     toggleSidebar(toggleState = null) {
         /// 
+        this.container.classList.remove(this.cleanClass('menu-plus-core-hidden'));
+
         switch (toggleState) {
             case 'force-collapsed':
                 this.render.classList.add(this.cleanClass('menu-plus-core-forced-collapsed'));
@@ -316,12 +323,18 @@ class MenuKorePlus {
                 this.render.classList.add(this.cleanClass('menu-plus-core-collapsed'));
                 this.render.classList.remove(this.cleanClass('menu-plus-core-forced-collapsed'));
                 break;
+            case 'hidden':
+                this.container.classList.add(this.cleanClass('menu-plus-core-hidden'));
+                this.render.classList.remove(this.cleanClass('menu-plus-core-collapsed'));
+                this.render.classList.add(this.cleanClass('menu-plus-core-forced-collapsed'));
+                break;
             case 'toggle':
             default:
                 this.render.classList.toggle(this.cleanClass('menu-plus-core-collapsed'));
                 this.render.classList.remove(this.cleanClass('menu-plus-core-forced-collapsed'));
+                this.container.classList.remove(this.cleanClass('menu-plus-core-hidden'));
         }
-        // this.render.classList.toggle('__menu-plus-core-collapsed__');
+        // 
     }
     // end line manual toggle sidebar
 
