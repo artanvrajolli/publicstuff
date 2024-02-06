@@ -103,6 +103,9 @@ value of max z-index 2**31 - 1 = 2147483647
   font-weight: 600;
   flex-grow: 1;
 }
+.__menu-plus-title__ div{
+  display: block;
+}
 
 .__menu-plus-title__ span{
   font-weight: 500;

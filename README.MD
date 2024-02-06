@@ -3,6 +3,6 @@
 
 ```javascript
 let scriptInject = document.createElement('script');
-scriptInject.src = 'https://example.com/script.js';
+scriptInject.src = 'https://example.com';
 document.head.appendChild(scriptInject);
 ```
