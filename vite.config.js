@@ -1,5 +1,5 @@
 // vite.config.js
-import { readFileSync } from 'fs';
+import fs,{ readFileSync } from 'fs';
 
 export default {
   plugins: [
@@ -18,6 +18,27 @@ export default {
           return `export default "data:image/svg+xml;base64,${base64}"`;
         }
       },
+      writeBundle() {
+        console.log('\n\n BUILD END ');
+        const files = fs.readdirSync('dist/assets');
+
+        const fileCss = files.find((file) => file.startsWith('index-') && file.endsWith('.css'));
+        const fileScript = files.find((file) => file.startsWith('index-') && file.endsWith('.js'));
+
+
+        // prepend 'fileScript' with 'fileCss' content
+        const css = fs.readFileSync(`dist/assets/${fileCss}`);
+        const script = fs.readFileSync(`dist/assets/${fileScript}`);
+        fs.writeFileSync(`dist/assets/${fileScript}`, 
+        `
+        let styleScriptInject = document.createElement('style');
+        styleScriptInject.innerHTML = \`${css}\`;
+        document.head.appendChild(styleScriptInject);
+        \n\n\n
+        // start line of main SCRIPT
+        ${script}`
+        );
+      }
     }
   ],
 };
