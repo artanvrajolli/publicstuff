@@ -9,7 +9,7 @@ value of max z-index 2**31 - 1 = 2147483647
 .__menu-plus-container__ *,
 .__menu-plus-container__ *::before,
 .__menu-plus-container__ *::after {
-    all: initial;
+    all: unset;
 }
 
 .__menu-plus-container__ *{
