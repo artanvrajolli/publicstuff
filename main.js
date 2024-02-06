@@ -309,30 +309,29 @@ class MenuKorePlus {
     toggleSidebar(toggleState = null) {
         /// 
         this.container.classList.remove(this.cleanClass('menu-plus-core-hidden'));
+        this.render.classList.remove(this.cleanClass('menu-plus-core-forced-collapsed'));
+        this.render.classList.remove(this.cleanClass('menu-plus-core-collapsed'));
+
+        document.body.style.setProperty('padding-left','60px','important');
 
         switch (toggleState) {
             case 'force-collapsed':
                 this.render.classList.add(this.cleanClass('menu-plus-core-forced-collapsed'));
                 break;
             case 'force-expanded':
-                this.render.classList.remove(this.cleanClass('menu-plus-core-collapsed'));
-                this.render.classList.remove(this.cleanClass('menu-plus-core-forced-collapsed'));
                 break;
             case 'open':
             case 'expanded':
                 this.render.classList.add(this.cleanClass('menu-plus-core-collapsed'));
-                this.render.classList.remove(this.cleanClass('menu-plus-core-forced-collapsed'));
                 break;
             case 'hidden':
                 this.container.classList.add(this.cleanClass('menu-plus-core-hidden'));
-                this.render.classList.remove(this.cleanClass('menu-plus-core-collapsed'));
                 this.render.classList.add(this.cleanClass('menu-plus-core-forced-collapsed'));
+                document.body.style.setProperty('padding-left','0px','important');
                 break;
             case 'toggle':
             default:
                 this.render.classList.toggle(this.cleanClass('menu-plus-core-collapsed'));
-                this.render.classList.remove(this.cleanClass('menu-plus-core-forced-collapsed'));
-                this.container.classList.remove(this.cleanClass('menu-plus-core-hidden'));
         }
         // 
     }
