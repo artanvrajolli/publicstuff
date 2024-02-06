@@ -2,6 +2,13 @@
 import fs,{ readFileSync } from 'fs';
 
 export default {
+  build: {
+    rollupOptions: {
+      output: {
+        entryFileNames: `assets/[name].js`, // This line removes the hash
+      },
+    },
+  },
   plugins: [
     {
       name: 'image-to-base64',
@@ -22,8 +29,8 @@ export default {
         console.log('\n\n BUILD END ');
         const files = fs.readdirSync('dist/assets');
 
-        const fileCss = files.find((file) => file.startsWith('index-') && file.endsWith('.css'));
-        const fileScript = files.find((file) => file.startsWith('index-') && file.endsWith('.js'));
+        const fileCss = files.find((file) => file.startsWith('index') && file.endsWith('.css'));
+        const fileScript = files.find((file) => file.startsWith('index') && file.endsWith('.js'));
 
 
         // prepend 'fileScript' with 'fileCss' content
