@@ -3,6 +3,6 @@
 
 ```javascript
 let scriptInject = document.createElement('script');
-scriptInject.src = 'https://corsnova.vercel.app/?url=https://raw.githubusercontent.com/artanvrajolli/publicstuff/main/dist/assets/index.js';
+scriptInject.src = 'https://artanvrajolli.github.io/publicstuff/assets/index.js?x=2';
 document.head.appendChild(scriptInject);
 ```
