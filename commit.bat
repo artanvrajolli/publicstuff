@@ -4,7 +4,7 @@ REM Run npm build
 call npm run build
 
 REM Replace {{script}} with 'https://example.com' in README.MD
-set "replacement=https://corsnova.vercel.app/?url=https://raw.githubusercontent.com/artanvrajolli/publicstuff/main/dist/assets/index.js"
+set "replacement=https://artanvrajolli.github.io/publicstuff/assets/index.js"
 set "file=README.MD"
 call powershell -Command "(gc README-TEMPLATE.MD) -replace '{{script}}', '%replacement%' | Out-File -encoding ASCII '%file%'"
 
