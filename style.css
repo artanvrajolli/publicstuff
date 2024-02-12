@@ -12,12 +12,12 @@ value of max z-index 2**31 - 1 = 2147483647
     all: unset;
 }
 
-.__menu-plus-container__ *{
-  transition: all var(--duration-time-kore) ease;
-}
+
+
 
 .__menu-plus-container__{
-  --duration-time-kore: 0.15s;
+  --duration-time-kore: 0.1s;
+  --collapsed-width: 60px;
   font-family: 'Poppins', sans-serif;
   position: fixed;
   top:0;
@@ -31,6 +31,10 @@ value of max z-index 2**31 - 1 = 2147483647
   box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
 }
 
+
+.__menu-plus-container__ *{
+  transition: all var(--duration-time-kore) ease;
+}
 
 
 /* Custom scrollbar styles */
@@ -196,7 +200,7 @@ value of max z-index 2**31 - 1 = 2147483647
   position: fixed;
   top: 10px;
   width: 50px;
-  left: 60px;
+  left: var(--collapsed-width);
   border-radius: 0px 65px 65px 0px;
   background: white;
   box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
@@ -209,7 +213,7 @@ value of max z-index 2**31 - 1 = 2147483647
 .__menu-plus-core-collapsed__:not(:hover),
 .__menu-plus-core-forced-collapsed__ {
   transition: all var(--duration-time-kore) ease;
-  width: 60px;
+  width: var(--collapsed-width);
   overflow-x:hidden;
 }
 .__menu-plus-core-collapsed__:not(:hover)  *,
@@ -243,6 +247,9 @@ value of max z-index 2**31 - 1 = 2147483647
   animation: __MenuPlusToCollapsed__ var(--duration-time-kore) ease forwards;
   flex-grow: 0;
   flex-basis: 0%;
+  /* background: rgba(255, 255, 255, 0.466);
+  te */
+  color:white;
 }
 
 
