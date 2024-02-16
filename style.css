@@ -79,7 +79,9 @@ value of max z-index 2**31 - 1 = 2147483647
 
 
 .__menu-plus-menu__:hover,
-.__main-menu-plus-offset-c1__:hover{
+.__main-menu-plus-offset-c1__:hover,
+.__menu-plus-menu__.__active-menu__,
+.__main-menu-plus-offset-c1__.__active-menu__{
   border-radius: 8px;
   background-color: #00B2E320;
   cursor: pointer;
@@ -87,7 +89,8 @@ value of max z-index 2**31 - 1 = 2147483647
 
 .__menu-plus-menu__:hover:before,
 .__main-menu-plus-offset-c1__:hover:before,
-.__menu-menu-plus-offset-c1__.__active__:before{
+.__menu-plus-menu__.__active-menu__:before,
+.__main-menu-plus-offset-c1__.__active-menu__:before{
   content: '';
   position: absolute;
   top:50%;
@@ -98,6 +101,9 @@ value of max z-index 2**31 - 1 = 2147483647
   width: 3px;
   background-color: #00b2e3;
 }
+
+
+
 
 .__menu-plus-title__{
   font-size: 10px;

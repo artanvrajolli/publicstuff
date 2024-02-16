@@ -46,9 +46,9 @@ class MenuKorePlus {
     currentWebsite = null;
     
     constructor(platformsList,servicesList) {
-        this.currentWebsite = window.location.hostname;
         this.platformsList = platformsList;
         this.servicesList = servicesList;
+        this.currentWebsite = window.location.hostname;
         this.constructorInitAsync();
     }
 
@@ -140,7 +140,7 @@ class MenuKorePlus {
             return this.componentMenu({
                 title: item.title,
                 img: item.img,
-                shortDesc: item.shortDesc,
+                shortDesc: item.shortDesc
             });
         });
     }
@@ -245,6 +245,11 @@ class MenuKorePlus {
 
 
         menuBox.classList.add(this.cleanClass('menu-plus-menu'));
+
+        if(this.currentWebsite === title){
+            menuBox.classList.add(this.cleanClass('active-menu'));
+        }
+
         return this.componentBox([menuBox], {
             class: this.cleanClass('menu-plus-offset-c1')
         });
@@ -271,9 +276,6 @@ class MenuKorePlus {
         }
 
         divCont.classList.add(this.cleanClass('main-menu-plus-offset-c1'));
-        if(this.currentWebsite.toLowerCase() === text.toLowerCase() || text.includes('.')){
-            divCont.classList.add(this.cleanClass('active'));
-        }
         let styles = ops?.style || {};
         for (const [key, value] of Object.entries(styles)) {
             divCont.style[key] = value;
