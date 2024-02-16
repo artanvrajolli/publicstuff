@@ -86,7 +86,8 @@ value of max z-index 2**31 - 1 = 2147483647
 }
 
 .__menu-plus-menu__:hover:before,
-.__main-menu-plus-offset-c1__:hover:before{
+.__main-menu-plus-offset-c1__:hover:before,
+.__menu-menu-plus-offset-c1__.__active__:before{
   content: '';
   position: absolute;
   top:50%;
