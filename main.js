@@ -246,7 +246,7 @@ class MenuKorePlus {
 
         menuBox.classList.add(this.cleanClass('menu-plus-menu'));
 
-        if(this.currentWebsite === title){
+        if(this.currentWebsite.includes(title)){
             menuBox.classList.add(this.cleanClass('active-menu'));
         }
 
