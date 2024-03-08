@@ -140,7 +140,8 @@ class MenuKorePlus {
             return this.componentMenu({
                 title: item.title,
                 img: item.img,
-                shortDesc: item.shortDesc
+                shortDesc: item.shortDesc,
+                link: item.link
             });
         });
     }
@@ -218,11 +219,17 @@ class MenuKorePlus {
     }
 
 
-    componentMenu({ title, img, shortDesc }, ops = {}) {
+    componentMenu({ title, img, shortDesc,link }, ops = {}) {
         let menuBox = document.createElement('div');
         let style = ops?.style || {};
         for (const [key, value] of Object.entries(style)) {
             menuBox.style[key] = value;
+        }
+
+        if(link){
+            menuBox.addEventListener('click',()=>{
+                window.open(link, '_blank');
+            });
         }
 
         let imgMenu = document.createElement('img');
@@ -405,50 +412,62 @@ let platformsList = [{
 	title: 'Mydev.com',
 	img: logoMyDev,
 	shortDesc: 'Software Development',
+    link: 'https://mydev.com/'
 },{
 	title: 'iReview.com',
 	img: platformsIrevuIcon,
 	shortDesc: 'Reputation Management',
+    link: 'https://ireview.com/'
 },{
 	title: 'Claritask.com',
 	img: platformsClaritaskIcon,
 	shortDesc: 'Project Management',
+    link: 'https://claritask.com/'
 },{
 	title: 'Sendbat.com',
 	img: platformsSendBatIcon,
 	shortDesc: 'AI Marketing | SMS Email',
+    link: 'https://sendbat.com/'
 },{
 	title: 'iPaymer.com',
 	img: platformsIpaymerIcon,
 	shortDesc: 'Payment Subscriptions',
+    link: 'https://ipaymer.com/'
 },{
 	title: 'Convosio.com',
 	img: platformsConvosioIcon,
 	shortDesc: 'Chat Support',
+    link: 'https://convosio.com/'
 },{
 	title: 'Claritick.com',
 	img: platformsClaritickIcon,
 	shortDesc: 'Ticket Management',
+    link: 'https://claritick.com/'
 },{
 	title: 'Urless.com',
 	img: platformsUrlessIcon,
 	shortDesc: 'URL | QR | Business Card',
+    link: 'https://urless.com/'
 },{
 	title: 'Zuitte.com',
 	img: platformsZuitteIcon,
 	shortDesc: 'Business Tools',
+    link: 'https://zuitte.com/'
 },{
 	title: 'Morsix.com',
 	img: platformsMorsixIcon,
 	shortDesc: 'Warehouse Management',
+    link: 'https://morsix.com/'
 },{
 	title: 'Azalytics.com',
 	img: platformsAzalyticsIcon,
 	shortDesc: 'Web Analytics',
+    link: 'https://azalytics.com/'
 },{
 	title: 'Paymentbrokers.com',
 	img: platformsPaymentBrokersIcon,
 	shortDesc: 'Processing Fees Negotiator',
+    link: 'https://paymentbrokers.com/'
 }];
 
 let servicesList = [{
