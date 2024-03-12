@@ -377,37 +377,6 @@ class MenuKorePlus {
 
 }
 
-
-/*
-    {
-        'icon': '....',
-        'text: 'admin-panel':
-        menu: [
-            {
-                'clartick',
-            'design',
-            'logo': 'aaaa.png'
-            },{
-                'clartick',
-            'design',
-            'logo': 'aaaa.png'
-            }
-        ]
-    }
-    [
-        { "title": "iReview.com", "shortdesc": "Reputation Management", "img": "" },
-        { "title": "Claritask.com", "shortdesc": "Project Management", "img": "" },
-        { "title": "Sendbat.com", "shortdesc": "AI Marketing | SMS Email", "img": "" },
-        { "title": "iPaymer.com", "shortdesc": "Payment Subscriptions", "img": "" },
-        { "title": "Convosio.com", "shortdesc": "Chat Support", "img": "" },
-        { "title": "Claritick.com", "shortdesc": "Ticket Management", "img": "" },
-        { "title": "Urless.com", "shortdesc": "URL | QR | Business Card", "img": "" },
-        { "title": "Zuitte.com", "shortdesc": "Business Tools", "img": "" },
-        { "title": "Morsix.com", "shortdesc": "Warehouse Management", "img": "" },
-        { "title": "Azalytics.com", "shortdesc": "Web Analytics", "img": "" },
-        { "title": "Paymentbrokers.com", "shortdesc": "Processing Fees Negotiator", "img": "" }
-    ]
-*/
 let platformsList = [{
 	title: 'Mydev.com',
 	img: logoMyDev,
@@ -458,34 +427,18 @@ let platformsList = [{
 	img: platformsMorsixIcon,
 	shortDesc: 'Warehouse Management',
     link: 'https://morsix.com/'
-},{
-	title: 'Azalytics.com',
-	img: platformsAzalyticsIcon,
-	shortDesc: 'Web Analytics',
-    link: 'https://azalytics.com/'
-},{
-	title: 'Paymentbrokers.com',
-	img: platformsPaymentBrokersIcon,
-	shortDesc: 'Processing Fees Negotiator',
-    link: 'https://paymentbrokers.com/'
 }];
 
 let servicesList = [{
 	title: 'Designed.co',
 	img: serviceDesignedCo,
 	shortDesc: 'Custom Design',
+    link: 'https://designed.co/'
 },{
 	title: 'Mydev.com',
 	img: logoMyDev,
 	shortDesc: 'Software Development',
-},{
-	title: 'Marketing',
-	img: serviceMarketing,
-	shortDesc: 'Business Marketing',
-},{
-	title: 'Merchant Processing',
-	img: serviceMerchantProcessing,
-	shortDesc: 'Credit Card Processor',
+    link: 'https://mydev.com/'
 }];
 
 window.MKPlus = new MenuKorePlus(platformsList,servicesList);
