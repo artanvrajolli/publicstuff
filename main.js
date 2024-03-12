@@ -112,7 +112,13 @@ class MenuKorePlus {
             this.componentBox(this.arrPlatforms, { style: { overflowY: 'auto', overflowX: 'hidden' } }),
             this.componentFlexGrow(1),
             this.loggedIn && this.componentMainMenu({ img: mainSettingsIcon, text: 'Manage Account' , showArrow: false }, { styleImage: {width: '22px',height:'22px'}}),
-            this.componentMainMenu({ img: mainBubbleChatIcon, text: 'Support Team' , showArrow: false },{ styleImage: {width:'22px',height:'22px'}, style: { marginBottom:'1rem'}}),
+            this.componentMainMenu({ img: mainBubbleChatIcon, text: 'Support Team' , showArrow: false },{ 
+                styleImage: {width:'22px',height:'22px'},
+                 style: { marginBottom:'1rem'},
+                 onClick: () => {
+                    window.postMessage('trig-open','*');
+                 }
+            }),
         ], {
             class: this.cleanClass([
                 'menu-plus-core-collapsed',
@@ -271,6 +277,11 @@ class MenuKorePlus {
             divCont.addEventListener('click',()=>{
                 window.open(link, '_blank');
             });
+        }
+
+        if(ops?.onClick){
+            divCont.style.cursor = 'pointer';
+            divCont.addEventListener('click',ops.onClick);
         }
 
 
