@@ -133,6 +133,7 @@ class MenuKorePlus {
                 title: item.title,
                 img: item.img,
                 shortDesc: item.shortDesc,
+                link: item.link
             });
         });
 
