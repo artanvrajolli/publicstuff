@@ -79,10 +79,10 @@ class MenuKorePlus {
         if(this.render) this.container.removeChild(this.render);
 
         let mainMenuLoggedIn = this.loggedIn ? [
-            this.componentMainMenu({ img: mainHomeIcon, text: 'Home' }),
-            this.componentMainMenu({ img: mainCRMIcon, text: 'CRM' }),
-            this.componentMainMenu({ img: mainStorageIcon, text: 'Storage' }),
-            this.componentMainMenu({ img: mainMyWebsitesIcon, text: 'My Websites' })
+            this.componentMainMenu({ img: mainHomeIcon, text: 'Home' ,link: 'https://accounts.kore.co/dashboard' }),
+            this.componentMainMenu({ img: mainCRMIcon, text: 'CRM',link: 'https://accounts.kore.co/crm/dashboard' }),
+            this.componentMainMenu({ img: mainStorageIcon, text: 'Storage', link: 'https://accounts.kore.co/storage/dashboard' }),
+            this.componentMainMenu({ img: mainMyWebsitesIcon, text: 'My Websites', link: 'https://accounts.kore.co/websites' })
         ] : [];
 
 
@@ -102,7 +102,7 @@ class MenuKorePlus {
                     this.toggleSidebar('hidden');
                 }
             }),
-            this.loggedIn ? this.componentTextMenu('ADMIN PANEL',{style:{textAlign:'center'}}) : this.componentMainMenu({ img: LoginIcon, text: 'Log in' , showArrow: false }),
+            this.loggedIn ? this.componentTextMenu('ADMIN PANEL',{style:{textAlign:'center'}}) : this.componentMainMenu({ img: LoginIcon, text: 'Log in' , showArrow: false, link:'https://accounts.kore.co/login' }),
             ...mainMenuLoggedIn,
             this.componentDivider(),
             this.componentTextMenu('Services'),
@@ -262,8 +262,15 @@ class MenuKorePlus {
         });
     }
 
-    componentMainMenu({ img, text , showArrow = true }, ops = {}) {
+    componentMainMenu({ img, text , showArrow = true, link = null }, ops = {}) {
         const divCont = document.createElement('div');
+
+        if(link){
+            divCont.style.cursor = 'pointer';
+            divCont.addEventListener('click',()=>{
+                window.open(link, '_blank');
+            });
+        }
 
 
         const stylesImgMenu = ops?.styleImg || ops?.styleImage || {};
