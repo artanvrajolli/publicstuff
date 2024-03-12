@@ -328,6 +328,20 @@ value of max z-index 2**31 - 1 = 2147483647
 
 
 
+.__menu-plus_container_helper-hover__{
+  --space-px: 15px;
+  content: '';
+  position: absolute;
+  top: 0;
+  /* background: red; */
+  width: var(--space-px);
+  bottom: 0;
+  right: calc( var(--space-px) * -1);
+  pointer-events: all;
+}
+
+
+
 @keyframe __MenuPlusToCollapsed__{
   0% {
     opacity: 1;

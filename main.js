@@ -90,6 +90,9 @@ class MenuKorePlus {
 
 
         return this.componentBox([
+            this.componentFreeWill({
+                'class': this.cleanClass('menu-plus_container_helper-hover')
+            }),
             this.componentHeader({ 
                 imgOpened: koreLogoExpanded, 
                 imgClosed: koreLogoCollapsed, 
@@ -155,6 +158,13 @@ class MenuKorePlus {
     // end line attributes
 
 
+    componentFreeWill(attr){
+        let divFreeWill = document.createElement(attr?.as ?? 'div');
+        for (const [key, value] of Object.entries(attr)) {
+            divFreeWill.setAttribute(key,value);
+        }
+        return divFreeWill;
+    }
 
     componentBox(listComponent, ops = {}) {
         let box = document.createElement('div');

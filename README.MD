@@ -3,11 +3,11 @@
 
 ```javascript
 let scriptInject = document.createElement('script');
-scriptInject.src = 'https://artanvrajolli.github.io/publicstuff/assets/index.js?x=1709129479';
+scriptInject.src = 'https://artanvrajolli.github.io/publicstuff/assets/index.js?x=1709130776';
 document.head.appendChild(scriptInject);
 ```
 
 
 ```html
-<script type="module" src="https://artanvrajolli.github.io/publicstuff/assets/index.js?x=1709129479"></script>
+<script type="module" src="https://artanvrajolli.github.io/publicstuff/assets/index.js?x=1709130776"></script>
 ```
