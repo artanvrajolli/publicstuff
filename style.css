@@ -329,7 +329,7 @@ value of max z-index 2**31 - 1 = 2147483647
 
 
 .__menu-plus_container_helper-hover__{
-  --space-px: 15px;
+  --space-px: 25px;
   content: '';
   position: absolute;
   top: 0;
