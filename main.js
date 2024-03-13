@@ -64,13 +64,13 @@ class MenuKorePlus {
         this.render = this.renderInit();
         this.toggleSidebar('default-state');
         // this.render.classList.add(this.cleanClass('menu-plus-core-forced-collapsed'));
-        document.dispatchEvent(new Event('MenuKorePlus:inited'));
+        document.dispatchEvent(new CustomEvent('MenuKorePlus:init', { detail: { } }));
     }
 
     setLoggedIn(loggedIn) {
         this.loggedIn = !!loggedIn;
         this.render = this.renderInit();
-        document.dispatchEvent(new Event('MenuKorePlus:loggedInChanged', { loggedIn:this.loggedIn }));
+        document.dispatchEvent(new CustomEvent('MenuKorePlus:login', { detail: { loggedIn:this.loggedIn } }));
     }
 
 
