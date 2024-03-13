@@ -20,12 +20,12 @@ document.head.appendChild(scriptInject);
     console.log('menu-plus-init event fired');
   });
 
-  document.addEventListener('MenuKorePlus:sidebar-change', function (e) {
-    console.log('MenuKorePlus:changeView event fired::',e.detail.sidebar);
+  document.addEventListener('MenuKorePlus:sidebar', function (e) {
+    console.log('MenuKorePlus:changeView event fired::', e.detail.sidebar);
   });
 
-    document.addEventListener('MenuKorePlus:login', function (e) {
-    console.log('login::',e.detail.sidebar);
+  document.addEventListener('MenuKorePlus:login', function (e) {
+    console.log('MenuKorePlus:login event fired::', e.detail.loggedIn);
   });
 
 ```

@@ -3,13 +3,13 @@
 
 ```javascript
 let scriptInject = document.createElement('script');
-scriptInject.src = 'https://artanvrajolli.github.io/publicstuff/assets/index.js?x=1709212983';
+scriptInject.src = 'https://artanvrajolli.github.io/publicstuff/assets/index.js?x=1709213034';
 document.head.appendChild(scriptInject);
 ```
 
 
 ```html
-<script type="module" src="https://artanvrajolli.github.io/publicstuff/assets/index.js?x=1709212983"></script>
+<script type="module" src="https://artanvrajolli.github.io/publicstuff/assets/index.js?x=1709213034"></script>
 ```
 
 
@@ -20,12 +20,12 @@ document.head.appendChild(scriptInject);
     console.log('menu-plus-init event fired');
   });
 
-  document.addEventListener('MenuKorePlus:sidebar-change', function (e) {
-    console.log('MenuKorePlus:changeView event fired::',e.detail.sidebar);
+  document.addEventListener('MenuKorePlus:sidebar', function (e) {
+    console.log('MenuKorePlus:changeView event fired::', e.detail.sidebar);
   });
 
-    document.addEventListener('MenuKorePlus:login', function (e) {
-    console.log('login::',e.detail.sidebar);
+  document.addEventListener('MenuKorePlus:login', function (e) {
+    console.log('MenuKorePlus:login event fired::', e.detail.loggedIn);
   });
 
 ```
