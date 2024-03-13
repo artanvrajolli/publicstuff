@@ -15,5 +15,9 @@
   document.addEventListener('menu-plus-init', function (e) {
     console.log('menu-plus-init event fired');
   });
+
+  document.addEventListener('MenuKorePlus:sidebar-change', function (e) {
+    console.log('MenuKorePlus:changeView event fired',e.detail);
+  });
 </script>
 </html>

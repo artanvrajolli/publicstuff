@@ -359,29 +359,28 @@ class MenuKorePlus {
         this.render.classList.remove(this.cleanClass('menu-plus-core-collapsed'));
 
         document.body.style.setProperty('padding-left','60px','important');
-
+        console.log('toggleState:',toggleState);
         switch (toggleState) {
-            case 'force-collapsed':
-                this.render.classList.add(this.cleanClass('menu-plus-core-forced-collapsed'));
-                break;
-            case 'force-expanded':
-                break;
             case 'open':
             case 'expanded':
                 this.render.classList.add(this.cleanClass('menu-plus-core-collapsed'));
+                toggleState = 'open';
                 break;
             case 'hidden':
                 this.container.classList.add(this.cleanClass('menu-plus-core-hidden'));
                 this.render.classList.add(this.cleanClass('menu-plus-core-forced-collapsed'));
                 document.body.style.setProperty('padding-left','0px','important');
+                toggleState = 'hidden';
                 break;
             case 'default-state':
                 this.render.classList.add(this.cleanClass('menu-plus-core-collapsed'));
+                toggleState = this.render.classList.contains(this.cleanClass('menu-plus-core-collapsed')) ? 'open' : 'hidden';
                 break;
             case 'toggle':
             default:
                 this.render.classList.toggle(this.cleanClass('menu-plus-core-collapsed'));
         }
+        document.dispatchEvent(new CustomEvent('MenuKorePlus:sidebar-change', { detail: { sidebar:toggleState } }));
         // 
     }
     // end line manual toggle sidebar
