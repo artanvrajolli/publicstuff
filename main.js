@@ -62,9 +62,9 @@ class MenuKorePlus {
         // this.container.classList.add(this.cleanClass('menu-plus-core-hidden'))
         this.initAttributes();
         this.render = this.renderInit();
+        document.dispatchEvent(new CustomEvent('MenuKorePlus:init', { detail: { } }));
         this.toggleSidebar('default-state');
         // this.render.classList.add(this.cleanClass('menu-plus-core-forced-collapsed'));
-        document.dispatchEvent(new CustomEvent('MenuKorePlus:init', { detail: { } }));
     }
 
     setLoggedIn(loggedIn) {
@@ -380,7 +380,7 @@ class MenuKorePlus {
             default:
                 this.render.classList.toggle(this.cleanClass('menu-plus-core-collapsed'));
         }
-        document.dispatchEvent(new CustomEvent('MenuKorePlus:sidebar-change', { detail: { sidebar:toggleState } }));
+        document.dispatchEvent(new CustomEvent('MenuKorePlus:sidebar', { detail: { sidebar:toggleState } }));
         // 
     }
     // end line manual toggle sidebar
