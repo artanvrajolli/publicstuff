@@ -359,7 +359,7 @@ class MenuKorePlus {
         this.render.classList.remove(this.cleanClass('menu-plus-core-collapsed'));
 
         document.body.style.setProperty('padding-left','60px','important');
-        console.log('toggleState:',toggleState);
+        // console.log('toggleState:',toggleState);
         switch (toggleState) {
             case 'open':
             case 'expanded':
