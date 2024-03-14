@@ -358,7 +358,7 @@ class MenuKorePlus {
         this.render.classList.remove(this.cleanClass('menu-plus-core-forced-collapsed'));
         this.render.classList.remove(this.cleanClass('menu-plus-core-collapsed'));
 
-        document.body.style.setProperty('padding-left','60px','important');
+        document.body.style.setProperty('padding-left','var(--collapsed-width-kore-plus)','important');
         // console.log('toggleState:',toggleState);
         switch (toggleState) {
             case 'open':
@@ -369,7 +369,9 @@ class MenuKorePlus {
             case 'hidden':
                 this.container.classList.add(this.cleanClass('menu-plus-core-hidden'));
                 this.render.classList.add(this.cleanClass('menu-plus-core-forced-collapsed'));
-                document.body.style.setProperty('padding-left','0px','important');
+                // document.body.style.setProperty('padding-left','0px','important');
+                //remove padding-left
+                document.body.style.removeProperty('padding-left');
                 toggleState = 'hidden';
                 break;
             case 'default-state':
